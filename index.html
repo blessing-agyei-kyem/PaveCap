@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="PaveCap, PCI, Pavement Condition Assessment, ">
+  <meta name="keywords" content="PaveCap, PCI, Pavement Condition Assessment, Multi-modal AI">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PaveCap: The First Multimodal Framework for Comprehensive Pavement Condition Assessment with Dense Captioning and PCI Estimation</title>
 
@@ -18,7 +18,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/pavecap.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -38,7 +38,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://blessing-agyeik-kyem.github.io">
+      <a class="navbar-item" href="https://blessing-agyei-kyem.github.io">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -70,7 +70,7 @@
             <span class="author-block">
               <a href="https://blessing-agyei-kyem.github.io">Blessing Agyei Kyem</a><sup>1,3</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Eugene Okrah Kofi Denteh</a><sup>2</sup>,</span>
+              <a href="https://eugenedenteh.github.io">Eugene Okrah Kofi Denteh</a><sup>2</sup>,</span>
             <span class="author-block">
               <a href="https://jonbarron.info">Joshua Kofi Asamoah</a><sup>1,3</sup>,
             </span>
@@ -98,7 +98,7 @@
                 </a>
               </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="https://arxiv.org/abs/2408.04110"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -107,7 +107,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -115,10 +115,10 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/Blessing988/PaveCap"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -128,13 +128,14 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href="https://drive.google.com/drive/u/1/folders/1KuvUORyBN7uQIIjeoaQTGYmrVEGgTPbm"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
                   </a>
+              </span>
             </div>
 
           </div>
@@ -144,7 +145,7 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -216,7 +217,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -227,31 +228,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            This research introduces the first multimodal approach for pavement condition assessment, providing both quantitative Pavement Condition Index (PCI) predictions and qualitative descriptions.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            We introduce <strong>PaveCap</strong>, a novel framework for automated pavement condition assessment. The framework consists of two main parts: a <strong>Single-Shot PCI Estimation Network</strong> and a <strong>fine-grained Dense Captioning Network</strong>. The PCI Estimation Network uses YOLOv8 for object detection, the Segment Anything Model (SAM) for zero-shot segmentation, and a four-layer convolutional neural network to predict PCI. The Dense Captioning Network uses a YOLOv8 backbone, a Transformer encoder-decoder architecture, and a convolutional feed-forward module to generate detailed descriptions of pavement conditions. 
           </p>
+
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            To train and evaluate these networks, we developed a pavement dataset with bounding box annotations, textual annotations, and PCI values. The results of our PCI Estimation Network showed a strong positive correlation (0.70) between predicted and actual PCIs, demonstrating its effectiveness in automating condition assessment. Also, the Dense Captioning Network produced accurate pavement condition descriptions, evidenced by high BLEU (0.7445), GLEU (0.5893), and METEOR (0.7252) scores. Additionally, the dense captioning model handled complex scenarios well, even correcting some errors in the ground truth data. The framework developed here can greatly improve infrastructure management and decision18 making in pavement maintenance.
           </p>
         </div>
       </div>
