@@ -267,33 +267,34 @@
     </div>
   </section>
 
-  <section class="hero teaser" style="background-color:#9938910e">
-    <div class="container is-max-desktop">
-      <div class="hero-body has-text-centered">
-        <br>
-        <h2 class="title is-4">Overall Dense Pavement Captioning Network</h2>
-        <img src="./static/images/overall-framework.png">
-      </div>
 
+<section class="hero teaser"  style="background-color:#36473a07">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+      <br>
+      <h2 class="title is-4">Overall Dense Pavement Captioning Network</h2>
+      <img src="./static/images/overall-framework.png">
     </div>
-  </section>
+
+  </div>
+</section>
 
 
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body has-text-centered">
-        <br>
-        <h2 class="title is-4">Dataset Structure</h2>
-        <figure>
-          <img src="./static/images/pavecap-dataset-structure.png" alt="PaveCap Dataset Structure">
-          <figcaption><em>
-            <strong>Structure of our multimodal dataset.</strong> The dataset is based on pavement images sourced from the <a href="https://dsps-1e998.web.app/">DSPS 24 Competition</a>, which originally included only the Pavement Condition Index (PCI) for each image. To enhance the dataset for our research, we manually annotated each image with bounding boxes to identify specific pavement distresses. Additionally, we provided textual annotations to classify these distresses based on their presence or absence. Notably, we carefully considered pavement severity levels, which play a crucial role in accurate pavement condition assessment.
-          </em>
-          </figcaption>
-        </figure>
-      </div>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+      <br>
+      <h2 class="title is-4">Dataset Structure</h2>
+      <figure>
+        <img src="./static/images/pavecap-dataset-structure.png" alt="PaveCap Dataset Structure">
+        <figcaption><em>
+          <strong>Structure of our multimodal dataset.</strong> The dataset is based on pavement images sourced from the <a href="https://dsps-1e998.web.app/">DSPS 24 Competition</a>, which originally included only the Pavement Condition Index (PCI) for each image. To enhance the dataset for our research, we manually annotated each image with bounding boxes to identify specific pavement distresses. Additionally, we provided textual annotations to classify these distresses based on their presence or absence. Notably, we carefully considered pavement severity levels, which play a crucial role in accurate pavement condition assessment.
+        </em>
+        </figcaption>
+      </figure>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- <section class="hero is-light is-small">
     <div class="hero-body">
@@ -341,7 +342,59 @@
   </section>
   
 
-
+<section class="hero is-light is-small" style="background-color:#45565e02">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h2 class="title is-4">Evaluation Metrics for Dense Captioning</h2>
+      <p>We evaluated the performance of our dense captioning model on our test data using several standard metrics, including BLEU (1 to 4 n-grams), GLEU, and METEOR. The following table presents the mean and standard deviation for each metric based on our test results.</p>
+      <div style="display: flex; justify-content: center;">
+        <table class="table is-bordered is-striped is-narrow is-hoverable" style="width: 60%;">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Mean</th>
+              <th>Standard Deviation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BLEU-1</td>
+              <td>0.7445</td>
+              <td>±0.195</td>
+            </tr>
+            <tr>
+              <td>BLEU-2</td>
+              <td>0.6766</td>
+              <td>±0.212</td>
+            </tr>
+            <tr>
+              <td>BLEU-3</td>
+              <td>0.6130</td>
+              <td>±0.238</td>
+            </tr>
+            <tr>
+              <td>BLEU-4</td>
+              <td>0.5690</td>
+              <td>±0.261</td>
+            </tr>
+            <tr>
+              <td>GLEU</td>
+              <td>0.5893</td>
+              <td>±0.241</td>
+            </tr>
+            <tr>
+              <td>METEOR</td>
+              <td>0.7252</td>
+              <td>±0.199</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  
   
   
   
@@ -526,16 +579,8 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,licensed under a <a rel="license"
+            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
         </div>
       </div>
